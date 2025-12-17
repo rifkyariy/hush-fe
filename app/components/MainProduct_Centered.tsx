@@ -5,7 +5,6 @@ import type { HeroContent, HeroStat } from "../lib/content";
 
 interface MainProductProps {
   stats: HeroStat[];
-  videoSrc: string;
   posterSrc: string;
   heroCopy: HeroContent;
 }
@@ -78,17 +77,39 @@ const MainProduct_Centered = ({ stats, heroCopy }: MainProductProps) => {
               fill
               className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-700"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-[#030d1c] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030d1c] via-[#030d1c]/50 to-transparent" />
 
-            <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
+            <div className="absolute inset-x-8 bottom-8 flex items-end justify-between">
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Live Monitoring Dashboard</h3>
-                <p className="text-sm text-white/60 max-w-md">Real-time visualization of infant vitals, environmental metrics, and cry analysis.</p>
+                <div className="flex items-center gap-3 mb-3">
+                  <h3 className="text-xl font-bold text-white">Live Monitoring Dashboard</h3>
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs text-white/70">Live</span>
+                  </div>
+                </div>
+                <p className="text-sm text-white/60 max-w-md text-left">Real-time visualization of infant vitals, environmental metrics, and cry analysis.</p>
               </div>
-              <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-xs text-white/70">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                Live Demo Available
-              </div>
+              <Link
+                href="https://hush-dashboard.satyaadhiyaksa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center justify-center gap-2 h-10 px-6 rounded-full bg-white text-[#030d1c] font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors flex-shrink-0"
+              >
+                Go to Dashboard
+              </Link>
+            </div>
+
+            {/* Mobile Button */}
+            <div className="absolute inset-x-8 top-8 sm:hidden">
+              <Link
+                href="https://hush-dashboard.satyaadhiyaksa.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-10 px-6 rounded-full bg-white text-[#030d1c] font-bold text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors"
+              >
+                Go to Dashboard
+              </Link>
             </div>
           </div>
         </div>

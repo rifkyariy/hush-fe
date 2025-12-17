@@ -7,7 +7,6 @@ import SiteFooter from "../components/SiteFooter";
 import Preloader from "../components/Preloader";
 
 import {
-  heroVideoSrc,
   navigation as navData,
   teamMembers,
   teamSectionTitle,
@@ -40,7 +39,7 @@ export default function TeamPage() {
 
   return (
     <>
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} videoSrc={heroVideoSrc} />}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       <div className={`relative flex min-h-screen flex-col bg-ember-900 text-white ${isLoading ? "hidden" : ""}`}>
         <NavigationBar
           navigation={Array.isArray(navData) ? navData : []}

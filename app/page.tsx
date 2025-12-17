@@ -8,6 +8,7 @@ import ProblemSection from "./components/ProblemSection";
 import SolutionSection from "./components/SolutionSection";
 import ArchitectureSection from "./components/ArchitectureSection";
 import GoalsSection from "./components/GoalsSection";
+import GitHubSection from "./components/GitHubSection";
 import SiteFooter from "./components/SiteFooter";
 import Preloader from "./components/Preloader";
 
@@ -18,7 +19,6 @@ import {
   heroContent,
   heroPosterSrc,
   heroStats,
-  heroVideoSrc,
   navigation,
   problemCards,
   problemSectionTitle,
@@ -30,7 +30,7 @@ import { useHashScroll } from "./lib/hooks/useHashScroll";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const sectionIds = useMemo(() => ["overview", "problem", "solution", "architecture", "goals"], []);
+  const sectionIds = useMemo(() => ["overview", "problem", "solution", "architecture", "goals", "github"], []);
   const activeSectionId = useActiveSection(isLoading ? [] : sectionIds);
 
   useHashScroll(!isLoading);
@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} videoSrc={heroVideoSrc} />}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       <div className={`relative flex min-h-screen flex-col bg-ember-900 text-white ${isLoading ? 'hidden' : ''}`}>
         <NavigationBar
           navigation={Array.isArray(navigation) ? navigation : []}
@@ -49,7 +49,6 @@ export default function Home() {
         />
         <MainProduct
           stats={heroStats}
-          videoSrc={heroVideoSrc}
           posterSrc={heroPosterSrc}
           heroCopy={heroContent}
         />
@@ -58,6 +57,7 @@ export default function Home() {
           <SolutionSection title={solutionSectionTitle} features={solutionFeatures} variant="bento" />
           <ArchitectureSection title={architectureTitle} layers={architectureLayers} variant="bento" />
           <GoalsSection goals={businessGoals} variant="bento" />
+          <GitHubSection variant="bento" />
         </main>
         <SiteFooter />
       </div>

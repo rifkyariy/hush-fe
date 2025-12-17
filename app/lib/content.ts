@@ -328,7 +328,5 @@ export const billOfMaterials: BillOfMaterials = {
   totalEstimatedBudget: "NT$2355 ",
 };
 
-export const heroVideoSrc = "/videos/bumper.mp4";
-
 export const heroPosterSrc =
   "https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070";

@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   title: "Hush IIoT Digital Nursery",
   description:
     "Next-level caring for Neonatal Intensive Care Units using AI-powered crying analytics and medical-grade sensors.",
+  icons: {
+    icon: [
+      {
+        url: "/logo.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   openGraph: {
     title: "Hush IIoT Digital Nursery",
     description:

@@ -26,7 +26,7 @@ const TeamSection = ({ title, members, variant = 'default' }: TeamSectionProps) 
             </div>
             <div className="h-20 w-20 rounded-full bg-white/5 border border-white/10 relative overflow-hidden mb-4 mx-auto">
               <Image
-                src={`https://images.unsplash.com/photo-${member.name === 'Gerald' ? '1500648767791-00dcc994a43e' : member.name === 'Satya' ? '1472099645785-5658abf4ff4e' : member.name === 'Jade' ? '1438761681033-6461ffad8d80' : '1507003211169-0a1dd7228f2d'}?q=80&w=200&auto=format&fit=crop`}
+                src={`/images/${member.name.toLowerCase()}.jpg`}
                 alt={member.name}
                 fill
                 className="object-cover grayscale group-hover:grayscale-0 transition-all"

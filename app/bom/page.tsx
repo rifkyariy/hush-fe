@@ -8,7 +8,6 @@ import Preloader from "../components/Preloader";
 
 import {
   billOfMaterials,
-  heroVideoSrc,
   navigation as navData,
 } from "../lib/content";
 import { useHashScroll } from "../lib/hooks/useHashScroll";
@@ -24,7 +23,7 @@ export default function BomPage() {
 
   return (
     <>
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} videoSrc={heroVideoSrc} />}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       <div
         className={`relative flex min-h-screen flex-col bg-ember-900 text-white ${isLoading ? "hidden" : ""
           }`}
