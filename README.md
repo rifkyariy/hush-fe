@@ -1,14 +1,17 @@
-## Extropic.ai Marketing Clone
 
-This project recreates the [Extropic.ai](https://extropic.ai/) marketing site using **Next.js (App Router)** and **Tailwind CSS** with a glassmorphism-inspired visual system. It focuses on replicating the hero experience, hardware/software sections, media highlights, and call-to-action blocks while remaining deployable out of the box.
+# Hush IIoT Digital Nursery – Frontend
 
-### Key Features
-- Glassmorphism hero with layered gradients, animated glow ring, and stats cards mirroring the original site.
-- Hardware, software, media, and writing sections laid out similarly to Extropic.ai, using remote placeholder imagery where first-party assets were unavailable.
-- Responsive layout with custom typography (Space Grotesk + IBM Plex Sans) set up via `next/font`.
-- Tailwind utility extensions for Extropic-specific color palette and gradients.
+Hush is an Industrial IoT (IIoT) system for Neonatal Intensive Care Units (NICU), providing 24/7 AI-powered monitoring and analytics for newborns. This frontend is built with **Next.js (App Router)**, **React 19**, **Tailwind CSS 4**, and **TypeScript**. It delivers a modern, glassmorphism-inspired UI for real-time visualization of infant health, system architecture, and business goals.
 
-### Tech Stack
+## Features
+- **Hero Section:** Glassmorphism hero with animated stats and video background.
+- **Problem & Solution:** Highlights NICU pain points and the Hush ecosystem (smart bracelet, baby box, edge/cloud AI).
+- **Architecture:** Visualizes the 4-layer system (Perception, Network, Middleware, Application) with hardware and protocols.
+- **Business Goals:** Outlines objectives for safety, efficiency, and centralized care.
+- **Responsive Design:** Custom typography (Space Grotesk, IBM Plex Sans) and mobile-first layout.
+- **Extensible:** Modular components for easy feature expansion.
+
+## Tech Stack
 - Next.js 16 (App Router)
 - React 19
 - Tailwind CSS 4
@@ -17,42 +20,41 @@ This project recreates the [Extropic.ai](https://extropic.ai/) marketing site us
 ## Getting Started
 
 1. **Install dependencies**
-	```bash
-	npm install
-	```
+   ```bash
+   npm install
+   ```
 
 2. **Run the development server**
-	```bash
-	npm run dev
-	```
-	Visit [http://localhost:3000](http://localhost:3000) to preview the site.
+   ```bash
+   npm run dev
+   ```
+   Visit [http://localhost:3000](http://localhost:3000) to preview the site.
 
 3. **Create a production build**
-	```bash
-	npm run build
-	npm run start
-	```
+   ```bash
+   npm run build
+   npm run start
+   ```
 
 ## Project Structure
-- `app/page.tsx` – Main landing page with all sections.
-- `app/layout.tsx` – Root layout, metadata, and global font wiring.
-- `app/globals.css` – Global gradient background, glassmorphism helpers, and base styles.
-- `tailwind.config.ts` – Tailwind content paths and Extropic color palette.
+- `app/page.tsx` – Main landing page with hero, problem, solution, architecture, and goals sections.
+- `app/layout.tsx` – Root layout, metadata, and font setup.
+- `app/globals.css` – Global styles, gradients, and glassmorphism helpers.
+- `tailwind.config.ts` – Tailwind content paths and custom color palette.
 - `next.config.ts` – Remote image domains for placeholder assets.
+- `app/lib/content.ts` – Product content, architecture, and business logic.
 
-## Known Visual Differences
-- Proprietary images, videos, and SVG assets from Extropic.ai are replaced with royalty-free placeholders (Unsplash) and text treatments.
-- Interactions are limited to hover states and basic transitions; advanced scrolling effects from the original site are not replicated.
+## Product Overview
 
-## Troubleshooting Log
-- **Tailwind @apply / @theme parser errors**: Initial attempt to reuse Tailwind-specific at-rules (`@apply`, `@theme inline`) caused lint errors with the Tailwind v4 PostCSS pipeline. Resolved by hand-authoring the glassmorphism helpers in vanilla CSS (`.glass-panel`, `.glow-ring`) and removing unsupported at-rules.
-- **Stale `.next` build output**: `create-next-app` left a `.next` directory in the project root. Removed it to keep the workspace clean and avoid committing compiled artifacts.
-
-No runtime errors are currently observed with `npm run dev` or `npm run build` after applying the fixes above.
+**Hush** is designed for NICU environments:
+- **Continuous Monitoring:** 24/7 IoT-based coverage for critical newborn intervention.
+- **Smart Devices:** Wearable smart bracelet and baby box with medical-grade sensors.
+- **Edge & Cloud AI:** Real-time anomaly detection and analytics using TFLite, Next.js, and NestJS.
+- **Business Goals:** Enhance infant safety, reduce nurse workload, and enable centralized neonatal care.
 
 ## Deployment
-Deploy using your preferred Next.js hosting (Vercel, Netlify, custom Node server). Ensure the environment allows outbound requests to remote image domains (`images.unsplash.com`, `extropic.ai`, `cdn.pixabay.com`).
+Deploy on Vercel, Netlify, or any Node.js server. Ensure outbound requests to remote image domains (e.g., Unsplash) are allowed.
 
 ---
 
-Built with ❤️ to mirror Extropic.ai's brand while keeping the implementation open and maintainable.
+Built with ❤️ by the Hush team to advance neonatal care with open, maintainable technology.
